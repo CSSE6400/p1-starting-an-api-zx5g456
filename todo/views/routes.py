@@ -1,12 +1,12 @@
 from flask import Blueprint,jsonify
 
-bp = Blueprint('routes', __name__, url_prefix='/api/v1')
+bp = Blueprint('routes', __name__)
 
-@bp.route('/health')
+@bp.route('/api/v1/health')
 def health():
     return jsonify({'status': 'ok'})
 
-@bp.route('/todos/<int:id>', methods=['GET'])
+@bp.route('/api/v1/todos/<int:id>', methods=['GET'])
 def get_todos(id):
     return jsonify([{
             "id": id,
@@ -18,7 +18,7 @@ def get_todos(id):
             "updated_at": "2026-02-20T14:00:00"
         }])
 
-@bp.route('/todos', methods=['POST'])
+@bp.route('/api/v1/todos', methods=['POST'])
 def create_todo():
     return jsonify([{
             "id": 1,
@@ -30,7 +30,7 @@ def create_todo():
             "updated_at": "2026-02-20T14:00:00"
         }])
 
-@bp.route('/todos/<int:id>', methods=['PUT'])
+@bp.route('/api/v1/todos/<int:id>', methods=['PUT'])
 def update_todo(id):
     return jsonify([{
             "id": id,
@@ -42,7 +42,7 @@ def update_todo(id):
             "updated_at": "2026-02-20T14:00:00"
         }])
 
-@bp.route('/todos/<int:id>', methods=['DELETE'])
+@bp.route('/api/v1/todos/<int:id>', methods=['DELETE'])
 def delete_todo(id):
     return jsonify([{
             "id": id,
