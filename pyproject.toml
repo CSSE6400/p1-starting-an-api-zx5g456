@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "p1-starting-an-api"
+version = "0.1.0"
+description = ""
+authors = ["zx5g456 <435104670@qq.com>"]
+packages = [{ include = "todo" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+flask = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
